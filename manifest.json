@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "My Chrome Extension",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_title": "Click me!",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/my_function.js"],
+      "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+    }
+  ]
+}
